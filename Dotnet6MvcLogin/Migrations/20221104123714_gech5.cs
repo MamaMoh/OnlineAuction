@@ -4,27 +4,29 @@
 
 namespace Dotnet6MvcLogin.Migrations
 {
-    public partial class updateapplicationuser : Migration
+    public partial class gech5 : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.AlterColumn<string>(
-                name: "ProfilePicture",
-                table: "AspNetUsers",
+                name: "ProductDetail",
+                table: "Product",
                 type: "nvarchar(max)",
                 nullable: true,
                 oldClrType: typeof(string),
-                oldType: "nvarchar(max)");
+                oldType: "nvarchar(1000)",
+                oldMaxLength: 1000,
+                oldNullable: true);
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.AlterColumn<string>(
-                name: "ProfilePicture",
-                table: "AspNetUsers",
-                type: "nvarchar(max)",
-                nullable: false,
-                defaultValue: "",
+                name: "ProductDetail",
+                table: "Product",
+                type: "nvarchar(1000)",
+                maxLength: 1000,
+                nullable: true,
                 oldClrType: typeof(string),
                 oldType: "nvarchar(max)",
                 oldNullable: true);

@@ -1389,13 +1389,13 @@ textarea:focus {
 	display: none;
 }
 .setting, .currency, .language {
-		border-top: 2px solid #fed700;
-		padding: 20px 20px 10px;
-		background: #ffffff;
-		text-align: left;
-		-webkit-box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
-		box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
-		transition: all 0.3s ease-in-out;
+	border-top: 2px solid #fed700;
+	padding: 20px 20px 10px;
+	background: #ffffff;
+	text-align: left;
+	-webkit-box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+	box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+	/* transition: all 0.3s ease-in-out;*/ 
 }
 .setting {
 		min-width: 150px;
@@ -1524,8 +1524,8 @@ textarea:focus {
 		position: relative;
 }
 .hm-minicart-trigger {
-		border-radius: 2px;
-		background: #e80f0f;
+	border-radius: 2px;
+	/*background: #e80f0f;*/
 		color: #fff;
 		height: 45px;
 		cursor: pointer;
@@ -1733,7 +1733,7 @@ textarea:focus {
 	color: #ffffff;
 }
 /*Header Bottom Menu*/
-.header-bottom {
+	.header-bottom {
 		background: #fed700;
 		margin-bottom: 20px;
 }

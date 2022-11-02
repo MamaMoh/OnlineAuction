@@ -1,18 +1,22 @@
 using Dotnet6MvcLogin.Models.Domain;
 using Dotnet6MvcLogin.Repositories.Abstract;
 using Dotnet6MvcLogin.Repositories.Implementation;
+using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
+using Dotnet6MvcLogin.Data;
 
+using Dotnet6MvcLogin.Data.Services;
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
     builder.Services.AddDbContext<DatabaseContext>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("conn")));
+builder.Services.AddScoped<IProductService, ProductService>();
 
-    // For Identity  
-    builder.Services.AddIdentity<ApplicationUser, IdentityRole>()
+// For Identity  
+builder.Services.AddIdentity<ApplicationUser, IdentityRole>()
         .AddEntityFrameworkStores<DatabaseContext>()
         .AddDefaultTokenProviders();
 

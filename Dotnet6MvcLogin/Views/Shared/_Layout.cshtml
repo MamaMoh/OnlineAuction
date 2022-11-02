@@ -8,6 +8,7 @@
         <title>Home Version One || limupa - Digital Products Store eCommerce Bootstrap 4 Template</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
+
         <!-- Favicon -->
         <link rel="shortcut icon" type="image/x-icon" href="~/template/images/favicon.png">
         <!-- Material Design Iconic Font-V2.2.0 -->
@@ -16,6 +17,8 @@
         <link rel="stylesheet" href="~/template/css/font-awesome.min.css">
         <!-- Font Awesome Stars-->
         <link rel="stylesheet" href="~/template/css/fontawesome-stars.css">
+         <link rel="stylesheet" href="~/template/css/style.css">
+
         <!-- Meanmenu CSS -->
         <link rel="stylesheet" href="~/template/css/meanmenu.css">
         <!-- owl carousel CSS -->
@@ -221,10 +224,8 @@
                                         <!-- Begin Header Mini Cart Area -->
                                         <li class="hm-minicart">
                                             <div class="hm-minicart-trigger">
-                                                <span class="item-icon"></span>
-                                                <span class="item-text">£80.00
-                                                    <span class="cart-item-count">2</span>
-                                                </span>
+                                                <span><img src="~/template/images/user.png" width="60px" height="30px"/></span>
+                                                
                                             </div>
                                             <span></span>
                                             <div class="minicart">
@@ -582,6 +583,8 @@
                                                     </li>
                                                 </ul>
                                             </li>
+                                        <li><a href="/product">Products</a></li>
+
                                             <li><a href="about-us.html">About Us</a></li>
                                             <li><a href="contact.html">Contact</a></li>
                                             <li><a href="shop-left-sidebar.html">Smartwatch</a></li>
@@ -607,7 +610,7 @@
                 <!-- Mobile Menu Area End Here -->
             </header>
             <!-- Header Area End Here -->
-        @RenderBody();
+        @RenderBody()
             <!-- Begin Footer Area -->
             <div class="footer">
                 <!-- Begin Footer Static Top Area -->
@@ -991,8 +994,10 @@
         <script src="~/template/js/scrollUp.min.js"></script>
         <!-- Main/Activator js -->
         <script src="~/template/js/main.js"></script>
+                <script src="~/template/js/script.js"></script>
 
     </body>
 
 <!-- index30:23-->
 </html>
+@await RenderSectionAsync("Scripts", required: false)

@@ -1,0 +1,82 @@
+﻿@model IEnumerable<Product>
+
+@{
+    ViewData["Title"] = "List of Product";
+}
+
+<div class="Shopping-cart-area pt-60 pb-60">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <form action="#">
+                    <div class="table-content table-responsive">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th class="li-product-thumbnail">images</th>
+                                    <th class="cart-product-name">Product</th>
+                                    <th class="li-product-price">Unit Price</th>
+                                    <th class="li-product-quantity">Quantity</th>
+                                    <th class="li-product-subtotal">Total</th>
+                                    <th class="li-product-remove">Action</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                 @foreach (var item in Model)
+                                {
+                                    <tr>
+                                        <td class="li-product-thumbnail"><img src="@Html.DisplayFor(modelItem =>item.ImageURL)" width="200" height="200" /></td>
+                                        <td class="li-product-name"><a href="#"> @Html.DisplayFor(modelItem => item.ProductName)</a></td>
+                                        <td class="li-product-price"><span class="amount">$46.80</span></td>
+                                        <td class="quantity">
+                                            <label>Quantity</label>
+                                            <div class="cart-plus-minus">
+                                                <input class="cart-plus-minus-box" value="1" type="text">
+                                                <div class="dec qtybutton"><i class="fa fa-angle-down"></i></div>
+                                                <div class="inc qtybutton"><i class="fa fa-angle-up"></i></div>
+                                            </div>
+                                        </td>
+                                        <td class="product-subtotal"><span class="amount">$70.00</span></td>
+                                        <td class="align-middle">
+                                            <a class="btn btn-outline-primary" asp-action="Edit" asp-route-id="@item.Id"><i class="bi bi-pencil-square"></i>Edit </a> |
+                                            <a class="btn btn-outline-info" asp-action="Details" asp-route-id="@item.Id"><i class="bi bi-eye"></i>Details </a> |
+                                            <a class="btn btn-danger text-white" asp-action="Delete" asp-route-id="@item.Id"><i class="bi bi-trash"></i>Delete </a>
+                                        </td>
+                                    </tr>
+                }
+                              
+                              
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="coupon-all">
+                                <div class="coupon">
+                                    <input class="button" asp-action="Create" name="apply_coupon" value="Add Product" type="submit">
+                                </div>
+                                <div class="coupon2">
+                                    <input class="button" name="update_cart" value="Update cart" type="submit">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-5 ml-auto">
+                            <div class="cart-page-total">
+                                <h2>Cart totals</h2>
+                                <ul>
+                                    <li>Subtotal <span>$130.00</span></li>
+                                    <li>Total <span>$130.00</span></li>
+                                </ul>
+                                <a href="#">Proceed to checkout</a>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+

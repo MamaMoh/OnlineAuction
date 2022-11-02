@@ -4,7 +4,7 @@
 
 namespace Dotnet6MvcLogin.Migrations
 {
-    public partial class firstmig : Migration
+    public partial class gech2 : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
