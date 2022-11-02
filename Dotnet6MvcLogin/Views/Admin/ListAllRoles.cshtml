@@ -1,0 +1,33 @@
+﻿@using Microsoft.AspNetCore.Identity
+@model IEnumerable<IdentityRole>
+
+
+
+<h1>all Roles</h1>
+<a class="btn btn-primary mb-2" asp-action="AddRole"><i class="fa-solid fa-user"></i> Add Role</a>
+
+@if (Model.Any())
+{
+    <table class="tabel col-3">
+        <thead>
+            <tr>
+                <th>Role</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var role in Model)
+            {
+            <td>@role.Name</td>
+            <td class="text-center">
+                <a href="#" class="btn btn-primary btn-sm"><i class="fa-soild fa-pen-to-square"></i></a>
+                <a href="#" class="btn btn-primary btn-sm"><i class="fa-soild fa-pen-to-square"></i></a>
+            </td>
+            }
+        </tbody>
+    </table>
+}
+else
+{
+
+    <h5>"no roles yet, use the butonto add"</h5>
+}

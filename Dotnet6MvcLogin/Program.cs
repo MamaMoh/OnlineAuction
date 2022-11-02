@@ -15,9 +15,16 @@ builder.Services.AddControllersWithViews();
     builder.Services.AddIdentity<ApplicationUser, IdentityRole>()
         .AddEntityFrameworkStores<DatabaseContext>()
         .AddDefaultTokenProviders();
-
+    
     builder.Services.ConfigureApplicationCookie(configure: options => options.LoginPath = "/UserAuthentication/Login");
+var services = builder.Services;
+var configuration = builder.Configuration;
 
+services.AddAuthentication().AddGoogle(googleOptions =>
+{
+    googleOptions.ClientId = "692597354273-861v1nvlucv43sm6cdu10ktuj0mm1oaa.apps.googleusercontent.com";
+    googleOptions.ClientSecret = "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";
+});
 //add services to container
 builder.Services.AddScoped<IUserAuthenticationService, UserAuthenticationService>();
 var app = builder.Build();
@@ -42,3 +49,4 @@ app.MapControllerRoute(
     pattern: "{controller=Home}/{action=Index}/{id?}");
 
 app.Run();
+

@@ -2,7 +2,7 @@
 
 
 <!-- login-register31:27-->
-<
+
 
     <!--[if lt IE 8]>
         <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
@@ -14,7 +14,7 @@
         <div class="page-section mb-60">
             <div class="container">
                 <div class="row">
-                    <div class="col-sm-12 col-md-12 col-xs-12 col-lg-6 mb-30">
+                    <div class="col-sm-12 col-md-12 col-xs-12 col-lg-6 mb-30" style="margin-left:30%">
                         <!-- Login Form s-->
                         <form asp-action="Login" method="post">
                             <div class="login-form">
@@ -24,14 +24,14 @@
                                         <label>User Name*</label>
                                         <input type="text" class="mb-0" asp-for="Username" placeholder="Email Address">
                                         <div class="msg">
-                                            <span class="err" asp-validation-for="Username"></span>
+                                    <span class="err text-danger" asp-validation-for="Username"></span>
                                         </div>
                                     </div>
                                     <div class="col-12 mb-20">
                                         <label>Password</label>
                                         <input class="mb-0" type="password" asp-for="Password" placeholder="Password">
                                         <div class="msg">
-                                            <span asp-validation-for="Password" class="err"></span>
+                                            <span asp-validation-for="Password" class="text-danger err"></span>
                                         </div>
                                     </div>
                                     <div class="col-md-8">
@@ -43,19 +43,29 @@
                                     <div class="col-md-4 mt-10 mb-20 text-left text-md-right">
                                         <a href="#"> Forgotten pasward?</a>
                                     </div>
-                                    @if (TempData["msg"] != null)
-                                    {
-                                        <div class="msg">@TempData["msg"]</div>
-                                    }
-                                    <div class="col-md-12">
-                                        <button class="register-button mt-0">Login</button>
+                                    
+                                    <div class="col-md-12 mb-10 text-center">
+                                        <button class="register-button mt-0 " >Login</button>
                                     </div>
-                                      <div class="col-md-4 mt-10 mb-20 text-left text-md-right">
-                                        <a href="/UserAuthentication/Registration"> Not a user? Signup</a>
+                                      <div class="col-md-12  text-center ">
+                                <a href="/UserAuthentication/Registration"> Not a user? Signup</a><p>or sign up with:</p>
                                     </div>
+                            <div class="center-block mb-20 col-md-12" style="margin-left:40%">
+                                
+                                
+                                            <button type="button" class="btn btn-warning btn-floating" name="provider">
+                                                <i class="fa fa-google"></i>
+                                            </button>
+                                      
+
+                                    <button type="button" class="btn btn-warning btn-floating ">
+                                        <i class="fa fa-facebook-f"></i></button>
+                                  
+                            </div>
                                 </div>
                             </div>
                         </form>
+               
                     </div>
                  
                 </div>

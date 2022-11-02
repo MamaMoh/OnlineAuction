@@ -3990,7 +3990,7 @@ thead {
 
 /*-- Place Order --*/
 .register-button {
-	display: block;
+	/*display: block;*/
 	margin-top: 40px;
 	width: 140px;
 	border-radius: 0;
@@ -3998,7 +3998,7 @@ thead {
 	border: none;
 	line-height: 24px;
 	padding: 6px 20px;
-	float: left;
+	/*/float: left;*/
 	font-weight: 400;
 	text-transform: uppercase;
 	color: #ffffff;
@@ -4010,9 +4010,9 @@ thead {
 	background: #fed700;
 }
 /*----------------------------------------*/
-/* 	6.6 Li's Shopping Cart
+	/* 	6.6 Li's Shopping Cart
 /*----------------------------------------*/
-.li-product-quantity input {
+	.li-product-quantity input {
 	border: none;
 	color: #222555;
 	font-size: 14px;

@@ -8,21 +8,12 @@
         <!-- Begin Header Area -->
         <!-- Header Area End Here -->
         <!-- Begin Li's Breadcrumb Area -->
-        <div class="breadcrumb-area">
-            <div class="container">
-                <div class="breadcrumb-content">
-                    <ul>
-                        <li><a href="index.html">Home</a></li>
-                        <li class="active">Login Register</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
+      
         <!-- Li's Breadcrumb Area End Here -->
         <!-- Begin Login Content Area -->
         <div class="page-section mb-60">
             <div class="container">
-          <div class="col-sm-12 col-md-12 col-lg-6 col-xs-12">
+          <div class="col-sm-12 col-md-12 col-lg-6 col-xs-12" style="margin-left:30%">
     <form asp-action="Registration" method="post">
         <div class="login-form">
             <h4 class="login-title">Register</h4>
@@ -61,8 +52,23 @@
                     <span class="text-danger" asp-validation-for="PasswordConfirm"></span>
 
                 </div>
+                            @if (TempData["msg"] != null)
+                            {
+                                <div class="msg mb-10"><span class="text-danger">@TempData["msg"]</span></div>
+                            }
                 <div class="col-12">
                     <button class="register-button mt-0">Register</button>
+                     <div class="col-md-12  text-center ">
+                                <p>or sign up with:</p>
+                                    </div>
+                            <div class="center-block mb-20 col-md-12" style="margin-left:40%">
+                                <button type="button" class="btn btn-warning btn-floating ">
+                                    <i class="fa fa-google"></i>
+                                </button>
+                                <button type="button" class="btn btn-warning btn-floating ">
+                                <i class="fa fa-facebook-f"></i>
+                            </button>
+                            </div>
                 </div>
             </div>
         </div>

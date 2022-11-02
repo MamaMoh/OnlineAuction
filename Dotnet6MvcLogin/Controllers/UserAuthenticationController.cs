@@ -1,16 +1,21 @@
-﻿using Dotnet6MvcLogin.Models.DTO;
+﻿using Dotnet6MvcLogin.Models.Domain;
+using Dotnet6MvcLogin.Models.DTO;
 using Dotnet6MvcLogin.Repositories.Abstract;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using System.Security.Claims;
 
 namespace Dotnet6MvcLogin.Controllers
 {
     public class UserAuthenticationController : Controller
     {
         private readonly IUserAuthenticationService _authService;
-        public UserAuthenticationController(IUserAuthenticationService authService)
+        private readonly SignInManager<ApplicationUser> _signInManager;
+        public UserAuthenticationController(IUserAuthenticationService authService, SignInManager<ApplicationUser> signInManager)
         {
             this._authService = authService;
+            _signInManager=signInManager;
         }
 
         
@@ -36,7 +41,9 @@ namespace Dotnet6MvcLogin.Controllers
                 return RedirectToAction(nameof(Login));
             }
         }
-       
+        
+
+
         public IActionResult Registration()
         {
             return View();
