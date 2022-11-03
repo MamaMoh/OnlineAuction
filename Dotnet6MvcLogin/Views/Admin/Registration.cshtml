@@ -1,0 +1,78 @@
+﻿@model Dotnet6MvcLogin.Models.DTO.RegistrationModel
+
+    <!--[if lt IE 8]>
+        <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+    <!-- Begin Body Wrapper -->
+    <div class="body-wrapper">
+        <!-- Begin Header Area -->
+        <!-- Header Area End Here -->
+        <!-- Begin Li's Breadcrumb Area -->
+      
+        <!-- Li's Breadcrumb Area End Here -->
+        <!-- Begin Login Content Area -->
+        <div class="page-section mb-60">
+            <div class="container">
+          <div class="col-sm-12 col-md-12 col-lg-6 col-xs-12" style="margin-left:30%">
+    <form asp-action="Registration" method="post">
+        <div class="login-form">
+            <h4 class="login-title">Register</h4>
+            <div class="row" style="align-content:center">
+                <div class="col-md-6 col-12 mb-20">
+                    <label>First Name</label>
+                    <input class="mb-0" asp-for="FirstName" type="text" placeholder="First Name"/>
+                    <span class="text-danger" asp-validation-for="FirstName"></span>
+                </div>
+                <div class="col-md-6 col-12 mb-20">
+                    <label>Last Name</label>
+                    <input class="mb-0" type="text" asp-for="LastName" placeholder="Last Name">
+                    <span class="text-danger" asp-validation-for="LastName"></span>
+                </div>
+                <div class="col-md-12 mb-20">
+                    <label>Email Address*</label>
+                    <input class="mb-0" type="email" asp-for="Email" placeholder="Email Address">
+                    <span class="text-danger" asp-validation-for="Email"></span>
+
+                </div>
+                <div class="col-md-12 mb-20">
+                    <label>User Name*</label>
+                    <input class="mb-0" type="text" asp-for="Username" placeholder="User Name">
+                    <span class="text-danger" asp-validation-for="Username"></span>
+
+                </div>
+                <div class="col-md-6 mb-20">
+                    <label>Password</label>
+                    <input class="mb-0" type="password" asp-for="Password" placeholder="Password">
+                    <span class="text-danger" asp-validation-for="Password"></span>
+
+                </div>
+                <div class="col-md-6 mb-20">
+                    <label>Confirm Password</label>
+                    <input class="mb-0" type="password" asp-for="PasswordConfirm" placeholder="Confirm Password">
+                    <span class="text-danger" asp-validation-for="PasswordConfirm"></span>
+
+                </div>
+                            @if (TempData["msg"] != null)
+                            {
+                                <div class="msg mb-10"><span class="text-danger">@TempData["msg"]</span></div>
+                            }
+                <div class="col-12">
+                    <button class="register-button mt-0">Register</button>
+                     <div class="col-md-12  text-center ">
+                                <p>or sign up with:</p>
+                                    </div>
+                            <div class="center-block mb-20 col-md-12" style="margin-left:40%">
+                                <button type="button" class="btn btn-warning btn-floating ">
+                                    <i class="fa fa-google"></i>
+                                </button>
+                                <button type="button" class="btn btn-warning btn-floating ">
+                                <i class="fa fa-facebook-f"></i>
+                            </button>
+                            </div>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+</div>
+</div>

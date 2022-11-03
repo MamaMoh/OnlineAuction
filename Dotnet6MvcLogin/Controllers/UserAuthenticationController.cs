@@ -80,6 +80,11 @@ namespace Dotnet6MvcLogin.Controllers
         //    var result = await this._authService.RegisterAsync(model);
         //    return Ok(result);
         //}
+        [Authorize]
+        public IActionResult Account()
+        {
+            return View();
+        }
 
         [Authorize]
         public IActionResult ChangePassword()
