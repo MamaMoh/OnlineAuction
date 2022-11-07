@@ -46,7 +46,7 @@ function ValidatePhone(element) {
             document.getElementById(element).focus();
 
         }
-    
+
     return check;
 }
 
@@ -84,13 +84,13 @@ function Validatebtn(btn) {
 
 }
 nextBtns.forEach((btn) => {
-    btn.addEventListener("click", () => {
+  btn.addEventListener("click", () => {
         if (Validatebtn(btn.id)!=0) {
             console.log("error occur");
         } else {
-            formStepsNum++;
-            updateFormSteps();
-            updateProgressbar();
+    formStepsNum++;
+    updateFormSteps();
+    updateProgressbar();
         }
   });
 });
@@ -120,7 +120,7 @@ function updateProgressbar() {
       progressStep.classList.remove("progress-step-active");
     }
   });
-    
+
   const progressActive = document.querySelectorAll(".progress-step-active");
 
   progress.style.width =

@@ -23,7 +23,7 @@
                             </thead>
                             <tbody>
                                  @foreach (var item in Model)
-                                {
+                {
                                     <tr>
                                         <td class="li-product-thumbnail"><img src="@Html.DisplayFor(modelItem =>item.ImageURL)" width="200" height="200" /></td>
                                         <td class="li-product-name"><a href="#"> @Html.DisplayFor(modelItem => item.ProductName)</a></td>

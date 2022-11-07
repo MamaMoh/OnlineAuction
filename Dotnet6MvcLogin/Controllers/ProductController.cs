@@ -37,29 +37,14 @@ namespace Dotnet6MvcLogin.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> Create([Bind("ProductName,productCategory,ProductStatus,ImageFile,ImageURL,productDimention,Quantity,Weight,StartingPrice,StartDate,Enddate,ProductDetail")] Product product)
         {
-
-            if (ModelState.IsValid)
             {
-                
-                //save image
-                string wwwRootPath = _webHostEnvironment.WebRootPath;
-                string fileName = Path.GetFileNameWithoutExtension(product.ImageFile.FileName);
-                string extention = Path.GetExtension(product.ImageFile.FileName);
-                product.ImageURL = fileName = fileName + DateTime.Now.ToString("yymmssfff") + extention;
-               
-                string path = Path.Combine(wwwRootPath + "/ProductImage", product.ImageURL);
-                product.ImageURL = "ProductImage/" + fileName;
-                using (var fileStream = new FileStream(path, FileMode.Create))
-                {
-                    await product.ImageFile.CopyToAsync(fileStream);
-                }
-
-
-                await _service.AddAsync(product);
-                return RedirectToAction(nameof(Index));
             }
+
+
+            await _service.AddAsync(product);
+            return RedirectToAction(nameof(Index));
+        }
             else
             {
                 return View(model: product);
@@ -88,7 +73,6 @@ namespace Dotnet6MvcLogin.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,ProductName,productCategory,ProductStatus,ImageFile,ImageURL,productDimention,Quantity,Weight,StartingPrice,StartDate,Enddate,ProductDetail")] Product product)
         {
             if (!ModelState.IsValid)
             {

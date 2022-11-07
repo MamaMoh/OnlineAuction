@@ -22,7 +22,10 @@ namespace Dotnet6MvcLogin.Models
         public ProductCategory productCategory { get; set; }
         public ProductStatus productStatus { get; set; }
 
-        
+        [Required(ErrorMessage = "Email is required")]
+        public string? Email { get; set; }
+        public string? PostalCode { get; set; }
+
         public string? ImageURL { get; set; }
         [NotMapped]
         [DisplayName("Upload File")]
@@ -30,6 +33,7 @@ namespace Dotnet6MvcLogin.Models
         public ProductDimention productDimention{ get; set; }
 
         [Required(ErrorMessage = "Quantity is required")]
+        [MinLength(1)]
 
         public float Quantity { get; set; }
         public float? Weight { get; set; }
@@ -49,8 +53,9 @@ namespace Dotnet6MvcLogin.Models
 
         public float StartingPrice { get; set; }
 
-       
+
         [Display(Name = "Product Detail")]
+        [StringLength(maximumLength: 1000, MinimumLength = 0, ErrorMessage = "invalid detail")]
 
         public string? ProductDetail { get; set; }
 
